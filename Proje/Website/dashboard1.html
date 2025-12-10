@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Ai - Full Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard1.css">
+</head>
+<body>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.6/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/yIs1Z-I99HXiMD7J/scene.splinecode" class="bg-anim" events-target="global"></spline-viewer>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo-area">Business <span class="logo-accent">Ai</span></div>
+
+            <nav class="menu-items">
+                <div class="menu-link active" data-target="whatsapp">
+                    WhatsApp API <span class="status-dot"></span>
+                </div>
+                <div class="menu-link" data-target="instagram">
+                    Instagram Chat (Coming Soon)  <span class="status-dot"></span>
+                </div>
+                <div class="menu-link" data-target="telegram">
+                    Telegram Bot (Coming Soon) <span class="status-dot connected"></span>
+                </div>
+                <div class="menu-link" data-target="webchat">
+                    Web Site Widget (Coming Soon) <span class="status-dot"></span>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <section id="whatsapp" class="panel-section active">
+                <div class="header-title">
+                    <h2>WhatsApp Entegrasyonu</h2>
+                    <p>Meta Cloud API kullanarak WhatsApp Business hesabınızı bağlayın.</p>
+                </div>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label>Phone Number ID</label>
+                        <input type="text" class="glass-input" placeholder="Örn: 105934...">
+                    </div>
+                    <div class="form-group">
+                        <label>Access Token (Permanent)</label>
+                        <input type="password" class="glass-input" placeholder="Token yapıştır...">
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp AI Prompt</label>
+                        <textarea class="glass-input" placeholder="WhatsApp üzerinden gelen mesajlara nasıl cevap verilecek?"></textarea>
+                    </div>
+                    <button type="button" class="btn-connect">WhatsApp'a Bağlan</button>
+                </form>
+            </section>
+
+            <section id="instagram" class="panel-section">
+                <div class="header-title">
+                    <h2>Instagram DM Otomasyonu</h2>
+                    <p>Instagram Direct Message (DM) kutunuzu yapay zekaya emanet edin.</p>
+                </div>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label>Instagram Page ID</label>
+                        <input type="text" class="glass-input" placeholder="Facebook Sayfa Ayarlarından ID'yi girin">
+                    </div>
+                    <div class="form-group">
+                        <label>Access Token</label>
+                        <input type="password" class="glass-input" placeholder="Uzun erişim anahtarını girin">
+                    </div>
+                    <div class="form-group">
+                        <label>Instagram AI Persona</label>
+                        <textarea class="glass-input" placeholder="Instagram kitleniz daha genç olabilir. Emoji kullanarak samimi cevaplar ver..."></textarea>
+                    </div>
+                    <button type="button" class="btn-connect">Instagram'a Bağlan</button>
+                </form>
+            </section>
+
+            <section id="telegram" class="panel-section">
+                <div class="header-title">
+                    <h2>Telegram Bot Ayarları</h2>
+                    <p>BotFather'dan aldığınız API anahtarı ile Telegram botunuzu kurun.</p>
+                </div>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label>Bot Name</label>
+                        <input type="text" class="glass-input" placeholder="@BusinessAiBot">
+                    </div>
+                    <div class="form-group">
+                        <label>Bot API Token</label>
+                        <input type="password" class="glass-input" placeholder="Örn: 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11">
+                    </div>
+                    <div class="form-group">
+                        <label>Telegram Komutları & Prompt</label>
+                        <textarea class="glass-input" placeholder="/start komutuna nasıl cevap verilmeli? Sistem talimatlarını buraya girin."></textarea>
+                    </div>
+                    <button type="button" class="btn-connect">Telegram Botunu Başlat</button>
+                </form>
+            </section>
+
+            <section id="webchat" class="panel-section">
+                <div class="header-title">
+                    <h2>Web Site Widget</h2>
+                    <p>Bu kodu sitenizin &lt;body&gt; etiketinin sonuna ekleyin.</p>
+                </div>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label>Widget Rengi</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="color" class="glass-input" value="#a0c4ff" style="height: 50px; width: 100px; padding: 5px; cursor: pointer;">
+                            <input type="text" class="glass-input" value="#a0c4ff" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Embed Kodu (Kopyala)</label>
+                        <textarea class="glass-input" readonly style="font-family: monospace; font-size: 0.85rem; color: #a0c4ff;">
+<script src="https://business-ai.com/widget.js" id="bai-widget" data-key="USER_API_KEY_123"></script>
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Karşılama Mesajı</label>
+                        <input type="text" class="glass-input" value="Merhaba! Size nasıl yardımcı olabilirim? 👋">
+                    </div>
+                    <button type="button" class="btn-connect">Ayarları Güncelle</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const panels = document.querySelectorAll('.panel-section');
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuLinks.forEach(l => l.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+
+                link.classList.add('active');
+                const targetId = link.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

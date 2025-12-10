@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Business Ai</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.6/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/yIs1Z-I99HXiMD7J/scene.splinecode" class="bg-anim"></spline-viewer>
+
+    <main class="scroll-wrapper" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div class="glass-card" style="width: 400px; padding: 40px; text-align: center;">
+            
+            <h2 style="color: white; margin-bottom: 10px; font-family: 'Inter', sans-serif;">Welcome Back</h2>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 30px; font-size: 0.9rem; font-family: 'Inter', sans-serif;">
+                Enter your details to access the dashboard.
+            </p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required class="glass-input">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPass" placeholder="Password" required class="glass-input">
+                </div>
+                
+                <button type="submit" id="loginBtn" class="btn-signup" style="width: 100%; margin-top: 20px;">Log In</button>
+            </form>
+
+            <p style="color: rgba(255,255,255,0.7); margin-top: 20px; font-size: 0.9rem; font-family: 'Inter', sans-serif;">
+                Don't have an account? 
+                <a href="signup.html" class="link-hover" style="color: #a0c4ff; text-decoration: none; font-weight: 600;">Sign Up</a>
+            </p>
+        </div>
+    </main>
+
+    <script>
+    
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const emailInput = document.getElementById('loginEmail');
+            const passInput = document.getElementById('loginPass');
+            const btn = document.getElementById('loginBtn');
+
+         
+            const storedEmail = localStorage.getItem('userEmail');
+            const storedPass = localStorage.getItem('userPass');
+
+           
+            if (emailInput.value === storedEmail && passInput.value === storedPass) {
+                
+               
+                btn.textContent = "Redirecting...";
+                btn.style.backgroundColor = "#27c93f"; 
+                btn.style.color = "white";
+                btn.style.borderColor = "#27c93f";
+                
+               
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html'; 
+                }, 1000);
+
+            } else {
+               
+                alert('Incorrect email or password. Please try again.');
+                passInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
